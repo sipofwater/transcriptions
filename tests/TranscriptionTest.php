@@ -3,6 +3,7 @@
 namespace Tests;
 
 use ArrayAccess;
+use JsonSerializable;
 use PHPUnit\Framework\TestCase;
 
 use Sipofwater\LaracastsPackagingTest\Transcription;
@@ -64,6 +65,15 @@ class TranscriptionTest extends TestCase {
 
         $this->assertInstanceOf(ArrayAccess::class, $lines);
         $this->assertInstanceOf(Line::class, $lines[0]);
+    }
+
+    /** @test */
+    function it_can_render_as_json() {
+        $lines = $this->transcription->lines();
+
+        $this->assertInstanceOf(JsonSerializable::class, $lines);
+
+        $this->assertJson(json_encode($lines));
     }
 
 }
