@@ -17,7 +17,7 @@ class Line {
 
     
 
-    public function toAnchorTag() {
+    public function toHtml() {
         return "<a href='?time={$this->beginningTimestamp()}'>{$this->body}</a>";
     }
 }
