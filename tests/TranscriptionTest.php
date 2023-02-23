@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use ArrayAccess;
 use PHPUnit\Framework\TestCase;
 
 use Sipofwater\LaracastsPackagingTest\Transcription;
@@ -55,6 +56,14 @@ class TranscriptionTest extends TestCase {
         $result = $this->transcription->lines()->asHtml();
 
         $this->assertEquals($expected, $this->transcription->lines()->asHtml());
+    }
+
+    /** @test */
+    function it_supports_array_access() {
+        $lines = $this->transcription->lines();
+
+        $this->assertInstanceOf(ArrayAccess::class, $lines);
+        $this->assertInstanceOf(Line::class, $lines[0]);
     }
 
 }
