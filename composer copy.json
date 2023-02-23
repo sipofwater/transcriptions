@@ -1,0 +1,15 @@
+{
+    "name": "sipofwater/laracasts-packaging-test",
+    "autoload": {
+        "psr-4": {
+            "Sipofwater\\LaracastsPackagingTest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jake Atchison",
+            "email": "sipofwater@gmail.com"
+        }
+    ],
+    "require": {}
+}
